@@ -21,7 +21,18 @@ Route::get('/', function () {
 
 Route::any('/custom', function() {
     //
-    return view('custom');
+
+
+    $msj = 'Mensaje desde el Servidor ';
+    $saludo = "Hola Mundo";
+
+    $data =['msj2' => $msj,'saludo' => $saludo, 'edad'=> 15];
+
+    //Le mandamos la variable MSJ
+
+    //$msj es la variable creada Aqui
+    //msj2 Seria la variable que tendriamos en la vista Custom
+    return view('custom', $data);
 
 });
 

@@ -7,6 +7,11 @@
     <title>custom</title>
 </head>
 <body>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga quod iste alias perferendis est tempore natus reprehenderit quibusdam asperiores corporis! Recusandae est vitae omnis quod veritatis officia, dolores ad aperiam!
+
+    
+    <h1> {{$msj2}}</h1>
+
+    <h1> {{$saludo}}  </h1>
+    <h1> edad: {{$edad}}  </h1>
 </body>
 </html>
