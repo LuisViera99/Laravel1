@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,25 +15,28 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [TestController::class, 'test'] );
 
-Route::get('/', function () {
-   return view('welcome');
+
+//Route::get('/', function () {
+  // return view('welcome');
   
-});
+//});
 
-Route::get('/contacto', function () {
-    return 'Contactame';
+//Route::get('/contactos', function () {
+  //  return 'Contactame';
 
    //->name('') sera el nombre del Rute que usaremos en la vista
- })->name('contacto');
+    //Simpre utilizar Rutas con Nombre 
+//})->name('contacto');
  
 
-Route::any('/custom', function() {
+//Route::any('/custom', function() {
     //
 
 
-    $msj = 'Mensaje desde el Servidor ';
-    $saludo = "Hola Mundo";
+//    $msj = 'Mensaje desde el Servidor ';
+  //  $saludo = "Hola Mundo";
 
     
 
@@ -38,7 +44,7 @@ Route::any('/custom', function() {
 
     //$msj es la variable creada Aqui
     //msj2 Seria la variable que tendriamos en la vista Custom
-    return view('custom', ['msj2' => $msj,'saludo' => $saludo, 'edad'=> 15 ]);
+    //return view('custom', ['msj2' => $msj,'saludo' => $saludo, 'edad'=> 15 ]);
 
 
 
@@ -47,6 +53,6 @@ Route::any('/custom', function() {
     //$data =['msj2' => $msj,'saludo' => $saludo, 'edad'=> 15];
    // return view('custom', $data);
 
-});
+//})->name('custom');
 
 

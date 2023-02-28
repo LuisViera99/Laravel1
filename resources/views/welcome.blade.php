@@ -8,10 +8,11 @@
 </head>
 <body>
     <h1> Bienvenidos </h1>
-    <a href="/contacto"> contacto</a>
-    <a href="/custom"> custom</a>
+    <a href="{{ route('custom') }}">Ruta custom con Nombre</a>
+   
    <br>
-<a href="{{ route('contacto') }}">Ruta con Nombre</a>
+
+   <a href="{{ route('contacto') }}">Ruta Contacto con Nombre</a>
 
 </body>
 </html>
