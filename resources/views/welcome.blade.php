@@ -8,11 +8,15 @@
 </head>
 <body>
     <h1> Bienvenidos </h1>
-    <a href="{{ route('custom') }}">Ruta custom con Nombre</a>
-   
+ 
+   Nobre: {{$user->name}}
    <br>
+   id: {{$user->id}}
+   <br>
+   email: {{$user->email}}
+   <br>
+ 
 
-   <a href="{{ route('contacto') }}">Ruta Contacto con Nombre</a>
 
 </body>
 </html>
