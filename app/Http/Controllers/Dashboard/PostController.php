@@ -31,7 +31,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // echo request("title");
+        echo $request -> input('slug');
     }
 
     /**
