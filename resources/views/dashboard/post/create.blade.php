@@ -4,14 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Crear Post </title>
 </head>
 <body>
-
-    <h1> DashBoard </h1>
-
-    @yield('content')
-
-    
+    <h1> Crear Post </h1>
 </body>
 </html>

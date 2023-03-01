@@ -9,13 +9,6 @@
 <body>
     <h1> Bienvenidos </h1>
  
-   Nobre: {{$user->name}}
-   <br>
-   id: {{$user->id}}
-   <br>
-   email: {{$user->email}}
-   <br>
- 
 
 
 </body>
