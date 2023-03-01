@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -11,7 +12,12 @@ class TestController extends Controller
      */
     public function index()
     {
-        return view('index', ['name' => 'Luis', 'edad' => '30', 'html'=> '<h1> Titulo</h1>', 'array' => [1,2,3,4,5,6,6,7,8,8,9]] );
+
+        $posts = [1,2,3,4,'Luis'];
+        $name = "Luis";
+
+        // La funcion funciona para compactar la manera de mandar variables
+        return view('dashboard.test.index', compact('posts','name') );
     }
 
     /**
