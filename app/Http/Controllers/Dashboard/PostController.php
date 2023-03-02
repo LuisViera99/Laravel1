@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Str;
 class PostController extends Controller
 {
     /**
@@ -15,7 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        echo "Index";
+        $posts =Post::get();
+       return view('dashboard/post/index',compact('posts'));
         //
     }
 
@@ -27,7 +29,7 @@ class PostController extends Controller
         $categories = Category::pluck('id','title');
 
 
-        echo view('dashboard.post.create', compact('categories'));
+        echo view('dashboard/post/create', compact('categories'));
 
         //
     }
@@ -43,9 +45,17 @@ class PostController extends Controller
         // $validated = $request -> validate(StoreRequest::myRules());
 
         // dd($validated);
-        $data = array_merge($request->all(),['image' => '']);
-      dd($data);
-       Post::create($data);
+    
+    
+        //     $data = array_merge($request->all(),['image' => '']);
+    //   dd($data);
+
+
+        // $data = $request->validated();
+        // $data['slug'] = Str::slug($data['title']) ;
+        // dd($data);
+
+      Post::create($request->validated());
         //echo $request -> input('slug');
     }
 
