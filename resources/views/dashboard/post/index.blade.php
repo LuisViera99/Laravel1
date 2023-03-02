@@ -1,6 +1,8 @@
-@extends('dashboard.layout')
+@extends('dashboard/layout')
 
 @section('content')
+
+    <a href="{{ route("post.create") }} ">Crear</a>
 
     <table>
         <tr>
@@ -21,7 +23,23 @@
             <td>{{$p->title}}</td>
             <td>Categoria</td>
             <td>{{$p->posted}}</td>
-            <td>Acciones</td>
+            <td>
+                <a href="{{ route("post.edit",$p) }} ">Editar</a>
+
+                <a href="{{ route("post.show",$p) }} ">Ver</a>
+
+
+                <form action="{{route("post.destroy",$p) }}" method="post">
+                    @method("DELETE")
+                    @csrf
+                        <button type="submit">Eliminar</button>
+
+
+                </form>
+
+
+
+            </td>
            
 
         </tr>
@@ -29,4 +47,10 @@
 
     </tbody>
 </table>
+
+
+{{$posts-> links()}}
+
+
+
 @endsection
