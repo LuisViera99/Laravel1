@@ -67,7 +67,7 @@ class PostController extends Controller
 
         // return redirect("/post/create");
         // return redirect()->route("post.create");
-        return to_route("post.index");
+        return to_route("post.index")->with('status',"Registro Creado.");
     }
 
     /**
@@ -98,7 +98,7 @@ class PostController extends Controller
      */
     public function update(PutRequest $request, Post $post)
     {
-      
+ 
         $post->update($request->validated());
         return to_route("post.index");
         //
