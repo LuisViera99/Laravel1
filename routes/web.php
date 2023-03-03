@@ -28,6 +28,11 @@ Route::middleware([App\Http\Middleware\TestMiddleware::class])->group(function()
     } );
 
 });
+ Route::group(['prefix' => 'dashboard'], function(){
+     
+     Route::resource('post', PostController::class);
+});
+
 // Route::controller(PostController::class)->group(function(){
 
     
@@ -40,4 +45,3 @@ Route::middleware([App\Http\Middleware\TestMiddleware::class])->group(function()
 //     Route::put('post/{post}','update')->name("post.update");
 //     Route::delete('post/{post}','delete')->name("post.destroy");
 // });    
-Route::resource('post', PostController::class);
