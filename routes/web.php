@@ -18,7 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
     return view('welcome');
 } );
+Route::get('/test/{id?}/{name}', function($id=10,$name){
+    echo $id;
+    echo $name;
 
+} );
 Route::resource('post', PostController::class);
 
 // Route::get('post', [PostController::class,'index']);
